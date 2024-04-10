@@ -1,5 +1,6 @@
 package com.innerconsulting.scoreneo.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,13 +14,13 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Node("Score")
-public class Score {
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String name;
-    private boolean isSearchable;
-    @Relationship(type = "HAS_ROLE")
-    private List<Role> roles;
-}
+@Node("Role")
+public class Role {
+        @Id
+        @GeneratedValue
+        private Long id;
+        private String name;
+        @Relationship(type = "HAS_ALLOWED")
+        private List<Product> products;
+    }
+

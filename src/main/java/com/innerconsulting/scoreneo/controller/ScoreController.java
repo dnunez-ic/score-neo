@@ -2,7 +2,6 @@ package com.innerconsulting.scoreneo.controller;
 
 import com.innerconsulting.scoreneo.model.Score;
 import com.innerconsulting.scoreneo.services.ScoreService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +31,7 @@ public class ScoreController {
 
     @GetMapping("/")
     public ResponseEntity<Iterable<Score>> getAllScores() {
-        Iterable<Score> scores = scoreService.findAllScores();
+        Iterable<Score> scores = scoreService.getAllScore();
         return new ResponseEntity<>(scores, HttpStatus.OK);
     }
 

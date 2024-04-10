@@ -11,6 +11,6 @@ FROM openjdk:17-oracle
 
 WORKDIR /app
 COPY --from=MAVEN_BUILD /sources/target/score-neo-0.0.1-SNAPSHOT.jar /app/score-neo-0.0.1-SNAPSHOT.jar
-EXPOSE 9000
+EXPOSE 9001
 
 CMD ["java","-jar","score-neo-0.0.1-SNAPSHOT.jar"]

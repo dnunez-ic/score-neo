@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LocationService {
+public class ZonesService {
     @Autowired
     private final ZonesRepository zoneRepository;
 
-    public LocationService(ZonesRepository zoneRepository) {
+    public ZonesService(ZonesRepository zoneRepository) {
         this.zoneRepository = zoneRepository;
     }
 

@@ -1,11 +1,15 @@
 version: "3.8"
 services:
-  neospringboo:
+  neospringboot:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - my-network
+    depends_on:
+      - neo4j
   neo4j:
     image: neo4j:4.4.3-community
     ports:
@@ -19,3 +23,8 @@ services:
       - ./db/conf:/conf
       - ./db/logs:/logs
       - ./db/plugins:/plugins
+    networks:
+      - my-network
+networks:
+  my-network:
+    driver: bridge
